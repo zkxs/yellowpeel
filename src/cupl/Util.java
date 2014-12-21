@@ -1,3 +1,4 @@
+package cupl;
 import java.util.Arrays;
 
 
@@ -69,9 +70,6 @@ public class Util
 				break;
 			}
 		}
-		
-		System.out.print(Arrays.toString(bits));
-		System.out.println(" " + swapPoint);
 		
 		return swapPoint;
 	}

@@ -1,6 +1,15 @@
+package cupl;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+
+import cupl.counters.BinDown;
+import cupl.counters.BinUp;
+import cupl.counters.Clear;
+import cupl.counters.JohnsonDown;
+import cupl.counters.JohnsonUp;
+import cupl.counters.RingDown;
+import cupl.counters.RingUp;
 
 
 public class Main
@@ -17,7 +26,8 @@ public class Main
 			new RingUp(6),
 			new RingDown(6),
 			new JohnsonUp(6),
-			new JohnsonDown(6)
+			new JohnsonDown(6),
+			new Clear()
 		};
 		
 		try

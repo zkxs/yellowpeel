@@ -72,6 +72,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S1;  
 		if johndown        next S32; 
+		if clear           next S0;  
 	PRESENT S1
 		if binup           next S2;  
 		if bindown         next S0;  
@@ -79,6 +80,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32; 
 		if johnup          next S3;  
 		if johndown        next S0;  
+		if clear           next S0;  
 	PRESENT S2
 		if binup           next S3;  
 		if bindown         next S1;  
@@ -86,6 +88,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S1;  
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S3
 		if binup           next S4;  
 		if bindown         next S2;  
@@ -93,6 +96,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S7;  
 		if johndown        next S1;  
+		if clear           next S0;  
 	PRESENT S4
 		if binup           next S5;  
 		if bindown         next S3;  
@@ -100,6 +104,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S2;  
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S5
 		if binup           next S6;  
 		if bindown         next S4;  
@@ -107,6 +112,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S6
 		if binup           next S7;  
 		if bindown         next S5;  
@@ -114,6 +120,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S7
 		if binup           next S8;  
 		if bindown         next S6;  
@@ -121,6 +128,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S15; 
 		if johndown        next S3;  
+		if clear           next S0;  
 	PRESENT S8
 		if binup           next S9;  
 		if bindown         next S7;  
@@ -128,6 +136,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S4;  
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S9
 		if binup           next S10; 
 		if bindown         next S8;  
@@ -135,6 +144,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S10
 		if binup           next S11; 
 		if bindown         next S9;  
@@ -142,6 +152,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S11
 		if binup           next S12; 
 		if bindown         next S10; 
@@ -149,6 +160,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S12
 		if binup           next S13; 
 		if bindown         next S11; 
@@ -156,6 +168,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S13
 		if binup           next S14; 
 		if bindown         next S12; 
@@ -163,6 +176,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S14
 		if binup           next S15; 
 		if bindown         next S13; 
@@ -170,6 +184,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S15
 		if binup           next S16; 
 		if bindown         next S14; 
@@ -177,6 +192,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S31; 
 		if johndown        next S7;  
+		if clear           next S0;  
 	PRESENT S16
 		if binup           next S17; 
 		if bindown         next S15; 
@@ -184,6 +200,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S8;  
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S17
 		if binup           next S18; 
 		if bindown         next S16; 
@@ -191,6 +208,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S18
 		if binup           next S19; 
 		if bindown         next S17; 
@@ -198,6 +216,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S19
 		if binup           next S20; 
 		if bindown         next S18; 
@@ -205,6 +224,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S20
 		if binup           next S21; 
 		if bindown         next S19; 
@@ -212,6 +232,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S21
 		if binup           next S22; 
 		if bindown         next S20; 
@@ -219,6 +240,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S22
 		if binup           next S23; 
 		if bindown         next S21; 
@@ -226,6 +248,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S23
 		if binup           next S24; 
 		if bindown         next S22; 
@@ -233,6 +256,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S24
 		if binup           next S25; 
 		if bindown         next S23; 
@@ -240,6 +264,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S25
 		if binup           next S26; 
 		if bindown         next S24; 
@@ -247,6 +272,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S26
 		if binup           next S27; 
 		if bindown         next S25; 
@@ -254,6 +280,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S27
 		if binup           next S28; 
 		if bindown         next S26; 
@@ -261,6 +288,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S28
 		if binup           next S29; 
 		if bindown         next S27; 
@@ -268,6 +296,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S29
 		if binup           next S30; 
 		if bindown         next S28; 
@@ -275,6 +304,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S30
 		if binup           next S31; 
 		if bindown         next S29; 
@@ -282,6 +312,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S31
 		if binup           next S32; 
 		if bindown         next S30; 
@@ -289,6 +320,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S63; 
 		if johndown        next S15; 
+		if clear           next S0;  
 	PRESENT S32
 		if binup           next S33; 
 		if bindown         next S31; 
@@ -296,6 +328,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S16; 
 		if johnup          next S0;  
 		if johndown        next S48; 
+		if clear           next S0;  
 	PRESENT S33
 		if binup           next S34; 
 		if bindown         next S32; 
@@ -303,6 +336,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S34
 		if binup           next S35; 
 		if bindown         next S33; 
@@ -310,6 +344,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S35
 		if binup           next S36; 
 		if bindown         next S34; 
@@ -317,6 +352,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S36
 		if binup           next S37; 
 		if bindown         next S35; 
@@ -324,6 +360,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S37
 		if binup           next S38; 
 		if bindown         next S36; 
@@ -331,6 +368,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S38
 		if binup           next S39; 
 		if bindown         next S37; 
@@ -338,6 +376,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S39
 		if binup           next S40; 
 		if bindown         next S38; 
@@ -345,6 +384,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S40
 		if binup           next S41; 
 		if bindown         next S39; 
@@ -352,6 +392,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S41
 		if binup           next S42; 
 		if bindown         next S40; 
@@ -359,6 +400,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S42
 		if binup           next S43; 
 		if bindown         next S41; 
@@ -366,6 +408,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S43
 		if binup           next S44; 
 		if bindown         next S42; 
@@ -373,6 +416,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S44
 		if binup           next S45; 
 		if bindown         next S43; 
@@ -380,6 +424,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S45
 		if binup           next S46; 
 		if bindown         next S44; 
@@ -387,6 +432,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S46
 		if binup           next S47; 
 		if bindown         next S45; 
@@ -394,6 +440,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S47
 		if binup           next S48; 
 		if bindown         next S46; 
@@ -401,6 +448,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S48
 		if binup           next S49; 
 		if bindown         next S47; 
@@ -408,6 +456,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S32; 
 		if johndown        next S56; 
+		if clear           next S0;  
 	PRESENT S49
 		if binup           next S50; 
 		if bindown         next S48; 
@@ -415,6 +464,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S50
 		if binup           next S51; 
 		if bindown         next S49; 
@@ -422,6 +472,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S51
 		if binup           next S52; 
 		if bindown         next S50; 
@@ -429,6 +480,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S52
 		if binup           next S53; 
 		if bindown         next S51; 
@@ -436,6 +488,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S53
 		if binup           next S54; 
 		if bindown         next S52; 
@@ -443,6 +496,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S54
 		if binup           next S55; 
 		if bindown         next S53; 
@@ -450,6 +504,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S55
 		if binup           next S56; 
 		if bindown         next S54; 
@@ -457,6 +512,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S56
 		if binup           next S57; 
 		if bindown         next S55; 
@@ -464,6 +520,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S48; 
 		if johndown        next S60; 
+		if clear           next S0;  
 	PRESENT S57
 		if binup           next S58; 
 		if bindown         next S56; 
@@ -471,6 +528,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S58
 		if binup           next S59; 
 		if bindown         next S57; 
@@ -478,6 +536,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S59
 		if binup           next S60; 
 		if bindown         next S58; 
@@ -485,6 +544,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S60
 		if binup           next S61; 
 		if bindown         next S59; 
@@ -492,6 +552,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S56; 
 		if johndown        next S62; 
+		if clear           next S0;  
 	PRESENT S61
 		if binup           next S62; 
 		if bindown         next S60; 
@@ -499,6 +560,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S0;   /* invalid */
 		if johndown        next S0;   /* invalid */
+		if clear           next S0;  
 	PRESENT S62
 		if binup           next S63; 
 		if bindown         next S61; 
@@ -506,6 +568,7 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S60; 
 		if johndown        next S63; 
+		if clear           next S0;  
 	PRESENT S63
 		if binup           next S0;  
 		if bindown         next S62; 
@@ -513,4 +576,5 @@ Sequenced count { /* free running counter */
 		if ringdown        next S32;  /* invalid */
 		if johnup          next S62; 
 		if johndown        next S31; 
+		if clear           next S0;  
 }
