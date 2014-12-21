@@ -1,0 +1,13 @@
+q0.ar = !clr;
+q1.ar = !clr;
+q2.ar = !clr;
+q3.ar = !clr;
+q4.ar = !clr;
+q5.ar = !clr;
+
+q0.sp = hold;
+q1.sp = hold;
+q2.sp = hold;
+q3.sp = hold;
+q4.sp = hold;
+q5.sp = hold;

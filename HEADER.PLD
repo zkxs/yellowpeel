@@ -1,0 +1,36 @@
+Name     Count63 ;
+PartNo   00 ;
+Date     12/20/2014 ;
+Revision 01 ;
+Designer BGilder ;
+Company  University of Tulsa ;
+Assembly None ;
+Location Everywhere ;
+Device   p22v10 ;   /* Atmel ATF22V10CQZ-20PU */
+
+/**  Inputs  **/
+Pin 1     = clk;    /* Counter clock */
+Pin 11    = clr;    /* Counter clear input */
+Pin 2     = m1;
+Pin 3     =  m2;
+Pin 4     = dir;    /* Counter direction input */
+/*Pin 11    = !oe;    /* Register output enable */
+pin 13    = hold;
+
+/**  Outputs  **/
+Pin [14..19] = [q5..0]; /* Counter outputs */
+/*Pin 18 = carry;          /* Ripple carry out */
+
+/** Declarations and Intermediate Variable Definitions **/
+field mode = [clr,m1,m2,dir];         /* declare mode control field */
+bindown = mode:0;                    /* define count up mode */
+binup = mode:1;                  /* define count down mode */
+ringdown = mode:2;
+ringup = mode:3;
+johnup = mode:4;
+johndown = mode:5;
+blank1 = mode:6;
+blank2 = mode:7;
+clear = mode:[8..15];            /* define count clear mode */
+
+field count = [q5..0];   /* declare counter bit field */

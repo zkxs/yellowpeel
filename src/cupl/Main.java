@@ -2,6 +2,7 @@ package cupl;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 import cupl.counters.BinDown;
 import cupl.counters.BinUp;
@@ -16,7 +17,7 @@ public class Main
 {	
 	public static void main(String[] args)
 	{
-		String filename = "GENERATED.PLD";
+		String filename = "COUNT63.PLD";
 		int numberOfBits = 6;
 		int numberOfStates = (int)Math.pow(2, numberOfBits);
 		
@@ -32,22 +33,34 @@ public class Main
 		
 		try
 		{
-		
 			File file = new File(filename);
 			PrintStream out = new PrintStream(file);
 			
-			// print the table of state names
+			// write the header
+			{
+				File headerFile = new File("HEADER.PLD");
+				Scanner header = new Scanner(headerFile);
+				while (header.hasNextLine())
+				{
+					out.println(header.nextLine());
+				}
+				header.close();
+				out.println();
+			}
+			
+			// write the table of state names
 			{
 				out.println("/* define counter states */");
 				String bitFormatSting = "%" + numberOfBits + "s";
 				for (int stateNumber = 0; stateNumber < numberOfStates; stateNumber++)
 				{
+					if ( stateNumber != 0 && stateNumber%16==0 ) out.println();
 					out.printf("$define %-3s 'b'%s\n", "S" + String.format("%02d", stateNumber), String.format(bitFormatSting, Integer.toBinaryString(stateNumber)).replace(' ', '0'));
 				}
 				out.println();
 			}
 			
-			// print each state and its successors
+			// write each state and its successors
 			{
 				out.println("Sequenced count { /* free running counter */");
 				for (int stateNumber = 0; stateNumber < numberOfStates; stateNumber++)
@@ -60,8 +73,21 @@ public class Main
 						if (!next.isValid()) out.print(" /* invalid */");
 						out.println();
 					}
+					out.println();
 				}
 				out.println("}");
+			}
+			
+			// write the header
+			{
+				File footerFile = new File("FOOTER.PLD");
+				Scanner footer = new Scanner(footerFile);
+				while (footer.hasNextLine())
+				{
+					out.println(footer.nextLine());
+				}
+				footer.close();
+				out.println();
 			}
 			
 			out.close();
