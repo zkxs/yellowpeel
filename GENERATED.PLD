@@ -1,0 +1,516 @@
+/* define counter states */
+$define S0  'b'000000
+$define S1  'b'000001
+$define S2  'b'000010
+$define S3  'b'000011
+$define S4  'b'000100
+$define S5  'b'000101
+$define S6  'b'000110
+$define S7  'b'000111
+$define S8  'b'001000
+$define S9  'b'001001
+$define S10 'b'001010
+$define S11 'b'001011
+$define S12 'b'001100
+$define S13 'b'001101
+$define S14 'b'001110
+$define S15 'b'001111
+$define S16 'b'010000
+$define S17 'b'010001
+$define S18 'b'010010
+$define S19 'b'010011
+$define S20 'b'010100
+$define S21 'b'010101
+$define S22 'b'010110
+$define S23 'b'010111
+$define S24 'b'011000
+$define S25 'b'011001
+$define S26 'b'011010
+$define S27 'b'011011
+$define S28 'b'011100
+$define S29 'b'011101
+$define S30 'b'011110
+$define S31 'b'011111
+$define S32 'b'100000
+$define S33 'b'100001
+$define S34 'b'100010
+$define S35 'b'100011
+$define S36 'b'100100
+$define S37 'b'100101
+$define S38 'b'100110
+$define S39 'b'100111
+$define S40 'b'101000
+$define S41 'b'101001
+$define S42 'b'101010
+$define S43 'b'101011
+$define S44 'b'101100
+$define S45 'b'101101
+$define S46 'b'101110
+$define S47 'b'101111
+$define S48 'b'110000
+$define S49 'b'110001
+$define S50 'b'110010
+$define S51 'b'110011
+$define S52 'b'110100
+$define S53 'b'110101
+$define S54 'b'110110
+$define S55 'b'110111
+$define S56 'b'111000
+$define S57 'b'111001
+$define S58 'b'111010
+$define S59 'b'111011
+$define S60 'b'111100
+$define S61 'b'111101
+$define S62 'b'111110
+$define S63 'b'111111
+
+Sequenced count { /* free running counter */
+	PRESENT S0
+		if binup           next S1;  
+		if bindown         next S63; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S1;  
+		if johndown        next S32; 
+	PRESENT S1
+		if binup           next S2;  
+		if bindown         next S0;  
+		if ringup          next S2;  
+		if ringdown        next S32; 
+		if johnup          next S3;  
+		if johndown        next S0;  
+	PRESENT S2
+		if binup           next S3;  
+		if bindown         next S1;  
+		if ringup          next S4;  
+		if ringdown        next S1;  
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S3
+		if binup           next S4;  
+		if bindown         next S2;  
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S7;  
+		if johndown        next S1;  
+	PRESENT S4
+		if binup           next S5;  
+		if bindown         next S3;  
+		if ringup          next S8;  
+		if ringdown        next S2;  
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S5
+		if binup           next S6;  
+		if bindown         next S4;  
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S6
+		if binup           next S7;  
+		if bindown         next S5;  
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S7
+		if binup           next S8;  
+		if bindown         next S6;  
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S15; 
+		if johndown        next S3;  
+	PRESENT S8
+		if binup           next S9;  
+		if bindown         next S7;  
+		if ringup          next S16; 
+		if ringdown        next S4;  
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S9
+		if binup           next S10; 
+		if bindown         next S8;  
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S10
+		if binup           next S11; 
+		if bindown         next S9;  
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S11
+		if binup           next S12; 
+		if bindown         next S10; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S12
+		if binup           next S13; 
+		if bindown         next S11; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S13
+		if binup           next S14; 
+		if bindown         next S12; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S14
+		if binup           next S15; 
+		if bindown         next S13; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S15
+		if binup           next S16; 
+		if bindown         next S14; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S31; 
+		if johndown        next S7;  
+	PRESENT S16
+		if binup           next S17; 
+		if bindown         next S15; 
+		if ringup          next S32; 
+		if ringdown        next S8;  
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S17
+		if binup           next S18; 
+		if bindown         next S16; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S18
+		if binup           next S19; 
+		if bindown         next S17; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S19
+		if binup           next S20; 
+		if bindown         next S18; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S20
+		if binup           next S21; 
+		if bindown         next S19; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S21
+		if binup           next S22; 
+		if bindown         next S20; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S22
+		if binup           next S23; 
+		if bindown         next S21; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S23
+		if binup           next S24; 
+		if bindown         next S22; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S24
+		if binup           next S25; 
+		if bindown         next S23; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S25
+		if binup           next S26; 
+		if bindown         next S24; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S26
+		if binup           next S27; 
+		if bindown         next S25; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S27
+		if binup           next S28; 
+		if bindown         next S26; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S28
+		if binup           next S29; 
+		if bindown         next S27; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S29
+		if binup           next S30; 
+		if bindown         next S28; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S30
+		if binup           next S31; 
+		if bindown         next S29; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S31
+		if binup           next S32; 
+		if bindown         next S30; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S63; 
+		if johndown        next S15; 
+	PRESENT S32
+		if binup           next S33; 
+		if bindown         next S31; 
+		if ringup          next S1;  
+		if ringdown        next S16; 
+		if johnup          next S0;  
+		if johndown        next S48; 
+	PRESENT S33
+		if binup           next S34; 
+		if bindown         next S32; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S34
+		if binup           next S35; 
+		if bindown         next S33; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S35
+		if binup           next S36; 
+		if bindown         next S34; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S36
+		if binup           next S37; 
+		if bindown         next S35; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S37
+		if binup           next S38; 
+		if bindown         next S36; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S38
+		if binup           next S39; 
+		if bindown         next S37; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S39
+		if binup           next S40; 
+		if bindown         next S38; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S40
+		if binup           next S41; 
+		if bindown         next S39; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S41
+		if binup           next S42; 
+		if bindown         next S40; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S42
+		if binup           next S43; 
+		if bindown         next S41; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S43
+		if binup           next S44; 
+		if bindown         next S42; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S44
+		if binup           next S45; 
+		if bindown         next S43; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S45
+		if binup           next S46; 
+		if bindown         next S44; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S46
+		if binup           next S47; 
+		if bindown         next S45; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S47
+		if binup           next S48; 
+		if bindown         next S46; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S48
+		if binup           next S49; 
+		if bindown         next S47; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S32; 
+		if johndown        next S56; 
+	PRESENT S49
+		if binup           next S50; 
+		if bindown         next S48; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S50
+		if binup           next S51; 
+		if bindown         next S49; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S51
+		if binup           next S52; 
+		if bindown         next S50; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S52
+		if binup           next S53; 
+		if bindown         next S51; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S53
+		if binup           next S54; 
+		if bindown         next S52; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S54
+		if binup           next S55; 
+		if bindown         next S53; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S55
+		if binup           next S56; 
+		if bindown         next S54; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S56
+		if binup           next S57; 
+		if bindown         next S55; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S48; 
+		if johndown        next S60; 
+	PRESENT S57
+		if binup           next S58; 
+		if bindown         next S56; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S58
+		if binup           next S59; 
+		if bindown         next S57; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S59
+		if binup           next S60; 
+		if bindown         next S58; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S60
+		if binup           next S61; 
+		if bindown         next S59; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S56; 
+		if johndown        next S62; 
+	PRESENT S61
+		if binup           next S62; 
+		if bindown         next S60; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S0;   /* invalid */
+		if johndown        next S0;   /* invalid */
+	PRESENT S62
+		if binup           next S63; 
+		if bindown         next S61; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S60; 
+		if johndown        next S63; 
+	PRESENT S63
+		if binup           next S0;  
+		if bindown         next S62; 
+		if ringup          next S1;   /* invalid */
+		if ringdown        next S32;  /* invalid */
+		if johnup          next S62; 
+		if johndown        next S31; 
+}
