@@ -65,17 +65,17 @@ public class Main
 				out.println("Sequenced count { /* free running counter */");
 				for (int stateNumber = 0; stateNumber < numberOfStates; stateNumber++)
 				{
-					out.printf("\tPRESENT S%s\n", String.format("%02d", stateNumber));
+					out.printf("    PRESENT S%s\n", String.format("%02d", stateNumber));
 					for (Counter c : counters)
 					{
 						Next next = c.getNext(stateNumber);
-						out.printf("\t\tif %-15s next %-5s", c.getName(), "S" + String.format("%02d", next.getNextState()) + ";");
+						out.printf("        if %-15s next %-5s", c.getName(), "S" + String.format("%02d", next.getNextState()) + ";");
 						if (!next.isValid()) out.print(" /* invalid */");
 						out.println();
 					}
-					out.println();
+					if (stateNumber < numberOfStates - 1) out.println();
 				}
-				out.println("}");
+				out.println("}\n");
 			}
 			
 			// write the header
