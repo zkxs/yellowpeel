@@ -42,7 +42,7 @@ public class Main
 				String bitFormatSting = "%" + numberOfBits + "s";
 				for (int stateNumber = 0; stateNumber < numberOfStates; stateNumber++)
 				{
-					out.printf("$define %-3s 'b'%s\n", "S" + stateNumber, String.format(bitFormatSting, Integer.toBinaryString(stateNumber)).replace(' ', '0'));
+					out.printf("$define %-3s 'b'%s\n", "S" + String.format("%02d", stateNumber), String.format(bitFormatSting, Integer.toBinaryString(stateNumber)).replace(' ', '0'));
 				}
 				out.println();
 			}
@@ -52,11 +52,11 @@ public class Main
 				out.println("Sequenced count { /* free running counter */");
 				for (int stateNumber = 0; stateNumber < numberOfStates; stateNumber++)
 				{
-					out.printf("\tPRESENT S%d\n", stateNumber);
+					out.printf("\tPRESENT S%s\n", String.format("%02d", stateNumber));
 					for (Counter c : counters)
 					{
 						Next next = c.getNext(stateNumber);
-						out.printf("\t\tif %-15s next %-5s", c.getName(), "S" + next.getNextState() + ";");
+						out.printf("\t\tif %-15s next %-5s", c.getName(), "S" + String.format("%02d", next.getNextState()) + ";");
 						if (!next.isValid()) out.print(" /* invalid */");
 						out.println();
 					}
@@ -64,6 +64,7 @@ public class Main
 				out.println("}");
 			}
 			
+			out.close();
 			System.out.println("Done.");
 		}
 		catch (FileNotFoundException e)
