@@ -28,7 +28,7 @@ public class Main
 			new RingDown(6),
 			new JohnsonUp(6),
 			new JohnsonDown(6),
-			new Clear()
+			//new Clear()
 		};
 		
 		try
@@ -69,9 +69,10 @@ public class Main
 					for (Counter c : counters)
 					{
 						Next next = c.getNext(stateNumber);
-						out.printf("        if %-15s next %-5s", c.getName(), "S" + String.format("%02d", next.getNextState()) + ";");
-						if (!next.isValid()) out.print(" /* invalid */");
-						out.println();
+						if (next.isValid())
+						{
+							out.printf("        if %-15s next %-5s\n", c.getName(), "S" + String.format("%02d", next.getNextState()) + ";");
+						}
 					}
 					if (stateNumber < numberOfStates - 1) out.println();
 				}
